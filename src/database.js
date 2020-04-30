@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 
-const {Client} = require("pg");
+const {Client} = require("pg").Client;
 const client = new Client();
 
 client.connect();
@@ -34,7 +34,6 @@ const deleteVisitor = async (id) => {
 
 	const res = await client.query(sql, [id]);
 	
-	// Results
 	return res.rows
 }
 
@@ -42,7 +41,6 @@ const deleteVisitors = async () => {
 
 	const res = await client.query(`DELETE FROM visitors RETURNING *`);
 	
-	// Results
 	return res.rows
 }
 
@@ -50,7 +48,6 @@ const viewVisitor = async (id) => {
 
 	const res = await client.query(`SELECT * FROM visitors WHERE id = $1`, [id]);
 	
-	// Results
 	return res.rows
 }
 
@@ -58,7 +55,6 @@ const viewVisitors = async () => {
 	
 	const res = await client.query(`SELECT * FROM visitors`);
 	
-	// Results
 	return res.rows
 }
 
@@ -76,7 +72,6 @@ const updateVisitor = async (id, visitor_name, visitor_age, date_of_visit, time_
 
 	const res = await client.query(sql, data);
 	
-	// Results
 	return res.rows
 }
 

@@ -65,6 +65,6 @@ app.get('/view-visitors', async (req, res) => {
 
 });
 
-const server = app.listen(3000, () => console.log('Express Server is running on Port: 3000'));
+const server = app.listen(2500, () => console.log('Express Server is running on Port: 2500'));
 
 module.exports = server;

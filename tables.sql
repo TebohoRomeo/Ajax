@@ -7,5 +7,3 @@ CREATE TABLE visitors (
     assistant varchar(255),
     comments text
 );
-
--- Creating table.
